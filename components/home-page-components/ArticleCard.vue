@@ -1,7 +1,12 @@
 <template>
   <div>
-    <v-row v-for="article in articleData" :key="article.articleNumber" align="center" justify="center">
-      <v-col cols="12" md="6">
+    <v-row
+      v-for="article in articleData"
+      :key="article.articleNumber"
+      align="center"
+      justify="center"
+    >
+      <v-col cols="12" md="8">
         <v-card class="mx-auto my-12">
           <v-img height="250" :src="article.image"></v-img>
 
@@ -9,16 +14,17 @@
 
           <v-card-text>
             <div>
-              {{ article.desc }}
+              {{ article.description }}
             </div>
           </v-card-text>
 
           <v-divider class="mx-4"></v-divider>
 
           <v-card-actions>
-            <v-btn class="my-2 mx-1" color="info" outlined rounded>
+            <v-btn color="primary" rounded outlined>
               Read More
             </v-btn>
+
             <v-btn
               class="my-2 mx-1"
               color="warning"
@@ -82,14 +88,14 @@ export default {
   },
   methods: {
     deleteArticle(articleNumber) {
-        console.log('deleting ' + articleNumber)
-        for (let i = 0; i < this.articleData.length; i++) {
-            if (this.articleData[i].articleNumber === articleNumber) {
-                console.log('deleted ' + this.articleData[i].title)
-                this.articleData.splice(i, 1)
-            }
+      console.log('deleting ' + articleNumber)
+      for (let i = 0; i < this.articleData.length; i++) {
+        if (this.articleData[i].articleNumber === articleNumber) {
+          console.log('deleted ' + this.articleData[i].title)
+          this.articleData.splice(i, 1)
         }
-    }
+      }
+    },
   },
 }
 </script>

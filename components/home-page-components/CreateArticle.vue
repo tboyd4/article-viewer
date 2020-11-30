@@ -3,6 +3,12 @@
     <v-col cols="12" md="8">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
+          v-model="articleNumber"
+          label="Article Number"
+          required
+        ></v-text-field>
+
+        <v-text-field
           v-model="title"
           :counter="50"
           label="Article Name"
@@ -23,7 +29,7 @@
           rounded
           outlined
           class="mr-4"
-          @click="validate"
+          @click="submit"
         >
           Submit Article
         </v-btn>
@@ -40,6 +46,7 @@
 export default {
   data: () => ({
     valid: true,
+    articleNumber: null,
     title: '',
     description: '',
     image: '',
@@ -47,7 +54,14 @@ export default {
 
   methods: {
     submit() {
-      console.log('Submit Article')
+      let newArticle = {
+          articleNumber: this.articleNumber,
+          title: this.title,
+          description: this.description,
+          image: this.image
+      }
+      this.$store.dispatch('articles/add', newArticle)
+      this.reset();
     },
     reset() {
       this.$refs.form.reset()

@@ -46,10 +46,22 @@ export const mutations = {
       }
     }
   },
+  addArticle(state, { articleNumber, title, description, image }) {
+    let newArticle = {
+      articleNumber: articleNumber,
+      title: title,
+      description: description,
+      image: image,
+    }
+    state.articleData.push(newArticle)
+  },
 }
 
 export const actions = {
   remove({ commit }, payload) {
     commit('removeArticle', payload)
+  },
+  add({ commit }, payload) {
+    commit('addArticle', payload)
   },
 }

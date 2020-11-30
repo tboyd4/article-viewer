@@ -1,8 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar clipped-left fixed app>
-      <v-toolbar-title>Article Viewer</v-toolbar-title>
-    </v-app-bar>
+    <app-nav-bar></app-nav-bar>
 
     <v-main>
       <v-container>
@@ -10,14 +8,17 @@
       </v-container>
     </v-main>
 
-    <v-footer absolute app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <foot-bar></foot-bar>
   </v-app>
 </template>
 
 <script>
+import AppNavBar from '../components/global-components/AppNavBar.vue'
+import FootBar from '../components/global-components/FooterBar.vue'
 export default {
-  
+  components: {
+    AppNavBar,
+    FootBar,
+  },
 }
 </script>

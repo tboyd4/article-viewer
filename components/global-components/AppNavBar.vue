@@ -15,10 +15,6 @@
             <v-list-item-title>Articles</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/about">
-            <v-list-item-title>About the Author</v-list-item-title>
-          </v-list-item>
-
           <v-list-item to="/create">
             <v-list-item-title>Add An Article</v-list-item-title>
           </v-list-item>

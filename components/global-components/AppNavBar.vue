@@ -1,6 +1,6 @@
 <template>
   <v-app-bar clipped-left fixed app>
-    <v-toolbar-title>Article Viewer</v-toolbar-title>
+    <v-toolbar-title>Lookit Article Viewer</v-toolbar-title>
   </v-app-bar>
 </template>
 

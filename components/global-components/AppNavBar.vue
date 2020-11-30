@@ -1,5 +1,14 @@
 <template>
-  <v-app-bar clipped-left fixed app>
+  <div>
+    <v-app-bar color="primary" dense dark>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+      <v-toolbar-title>LookIt Article Viewer</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+    </v-app-bar>
+  </div>
+  <!-- <v-app-bar clipped-left fixed app>
     <v-toolbar-title>Lookit Article Viewer</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn to="/" outlined rounded color="primary" class="mx-1">
@@ -11,7 +20,7 @@
     <v-btn to="/create" outlined rounded color="warning" class="mx-1">
       Add Article
     </v-btn>
-  </v-app-bar>
+  </v-app-bar> -->
 </template>
 
 <script>

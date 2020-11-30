@@ -14,7 +14,9 @@
 
           <v-card-text>
             <div>
-              {{ article.description }}
+              <v-responsive>
+                {{ article.description }}
+              </v-responsive>
             </div>
           </v-card-text>
 
@@ -65,7 +67,7 @@ export default {
     deleteArticle(articleNumber) {
       console.log('deleting ' + articleNumber)
       this.$store.dispatch('articles/remove', articleNumber)
-      this.snackbar = true;
+      this.snackbar = true
     },
   },
 }

@@ -2,28 +2,28 @@ export const state = () => ({
   articleData: [
     {
       articleNumber: 1,
-      title: 'Drones, The Future of Food Delivery',
+      title: 'The Future of Food Delivery.',
       description:
         'Sometime in the future, a drone flown by a man in a building in Idaho will be delivering your DoorDash. That time is coming soon. ',
       image: '/image1.jpg',
     },
     {
       articleNumber: 2,
-      title: 'Programming Is Cool',
+      title: 'Programming Is Cool.',
       description:
-        'Programming is great because you can do fun stuff and get paid pretty darn good for it. Read this article to find out more',
+        'Programming is great because you can do fun stuff and get paid pretty darn good for it. Read this article to find out more.',
       image: '/image2.jpg',
     },
     {
       articleNumber: 3,
-      title: 'Are Co-Working Spaces Actually Productive?',
+      title: 'Utilizing Co-Working Spaces.',
       description:
-        'Yes. They are super awesome and cool, especially if they are in the middle of downtown KC near a Messenger Coffee.',
+        'Co-Working spaces are super awesome and cool, especially if they are in the middle of downtown KC near a Messenger Coffee.',
       image: '/image3.jpg',
     },
     {
       articleNumber: 4,
-      title: 'Should you get the new M1 MacBook Pro?',
+      title: 'M1 MacBook Pro Review.',
       description:
         "Probably should. It is super fast and you can build and export code files so much faster. It's pretty cool.",
       image: '/image4.jpg',

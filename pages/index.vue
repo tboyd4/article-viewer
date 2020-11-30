@@ -2,7 +2,7 @@
   <div>
     <v-row align="center" justify="center">
       <v-col class="text-center">
-        <h1>Welcome To Lookit!</h1>
+        <h1>Welcome To LookIt!</h1>
       </v-col>
     </v-row>
 

@@ -8,6 +8,9 @@
     <v-btn to="/about" outlined rounded color="error" class="mx-1">
       About The Author
     </v-btn>
+    <v-btn to="/create" outlined rounded color="warning" class="mx-1">
+      Add Article
+    </v-btn>
   </v-app-bar>
 </template>
 

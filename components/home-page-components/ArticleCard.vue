@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row
-      v-for="article in articleData"
+      v-for="article in articles"
       :key="article.articleNumber"
       align="center"
       justify="center"
@@ -26,7 +26,7 @@
             </v-btn>
 
             <v-btn
-              class="my-2 mx-1"
+              class="my-2 mx-3"
               color="warning"
               outlined
               rounded
@@ -45,56 +45,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      articleData: [
-        {
-          articleNumber: 1,
-          title: 'Drones, The Future of Food Delivery',
-          description:
-            'Sometime in the future, a drone flown by a man in a building in Idaho will be delivering your DoorDash. That time is coming soon. ',
-          image: '/image1.jpg',
-        },
-        {
-          articleNumber: 2,
-          title: 'Programming Is Cool',
-          description:
-            'Programming is great because you can do fun stuff and get paid pretty darn good for it. Read this article to find out more',
-          image: '/image2.jpg',
-        },
-        {
-          articleNumber: 3,
-          title: 'Are Co-Working Spaces Actually Productive?',
-          description:
-            'Yes. They are super awesome and cool, especially if they are in the middle of downtown KC near a Messenger Coffee.',
-          image: '/image3.jpg',
-        },
-        {
-          articleNumber: 4,
-          title: 'Should you get the new M1 MacBook Pro?',
-          description:
-            "Probably should. It is super fast and you can build and export code files so much faster. It's pretty cool.",
-          image: '/image4.jpg',
-        },
-        {
-          articleNumber: 5,
-          title: 'What is the future of Tech?',
-          description:
-            'Fast growing tech consultancy company Uhray is the future of tech. Enough said.',
-          image: '/image5.jpg',
-        },
-      ],
-    }
+  computed: {
+      articles() {
+          return this.$store.state.articles.articleData
+      }
   },
   methods: {
     deleteArticle(articleNumber) {
       console.log('deleting ' + articleNumber)
-      for (let i = 0; i < this.articleData.length; i++) {
-        if (this.articleData[i].articleNumber === articleNumber) {
-          console.log('deleted ' + this.articleData[i].title)
-          this.articleData.splice(i, 1)
-        }
-      }
+      this.$store.dispatch('articles/remove', articleNumber)
     },
   },
 }

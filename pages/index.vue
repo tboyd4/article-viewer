@@ -7,14 +7,18 @@
     </v-row>
 
     <article-card></article-card>
+    <div class="my-12"></div>
+    <create-article></create-article>
   </div>
 </template>
 
 <script>
 import ArticleCard from '../components/home-page-components/ArticleCard.vue'
+import CreateArticle from '../components/home-page-components/CreateArticle.vue'
 export default {
   components: {
     ArticleCard,
+    CreateArticle
   },
 }
 </script>

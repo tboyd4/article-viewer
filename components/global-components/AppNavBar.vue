@@ -1,30 +1,47 @@
 <template>
   <div>
-    <v-app-bar color="primary" dense dark>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-system-bar color="accent"></v-system-bar>
 
-      <v-toolbar-title>LookIt Article Viewer</v-toolbar-title>
+    <v-app-bar color="secondary" dark>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-spacer></v-spacer>
+      <v-toolbar-title>LookIt! Article Viewer</v-toolbar-title>
     </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer"  temporary>
+      <v-list nav dense>
+        <v-list-item-group v-model="group" active-class="secondary">
+          <v-list-item to="/">
+            <v-list-item-title>Articles</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/about">
+            <v-list-item-title>About the Author</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/create">
+            <v-list-item-title>Add An Article</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
   </div>
-  <!-- <v-app-bar clipped-left fixed app>
-    <v-toolbar-title>Lookit Article Viewer</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn to="/" outlined rounded color="primary" class="mx-1">
-      View Articles
-    </v-btn>
-    <v-btn to="/about" outlined rounded color="error" class="mx-1">
-      About The Author
-    </v-btn>
-    <v-btn to="/create" outlined rounded color="warning" class="mx-1">
-      Add Article
-    </v-btn>
-  </v-app-bar> -->
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      drawer: false,
+      group: null,
+    }
+  },
+  watch: {
+    group() {
+      this.drawer = false
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>
